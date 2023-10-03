@@ -26,34 +26,28 @@ long double User::getUserBalance (std::string currency) {
 }
 
 std::string User::sendTo (User* reciepient, long double value, std::string currency) {
-    if (value > balance[currency]) {
-        return "Not enough to transfer";
-    }
-    if (reciepient->ID == -1) {
-        return "Recipient not found";
-    }
     this->balance[currency] -= value;
     reciepient->balance[currency] += value;
 }
 
 Order User::initMarketOrder (long double value, string currencyFrom, string currencyTo, string color, string type) {
-    
+    //нужно зафризить бабки, и положить ордер в лист открытых ордеров
 }
 
 
 Order User::initLimitOrder (long double value, string currencyFrom, string currencyTo, string color, string type, long double price) {
-    
+       
 }
 
 
 void declaneOrder (Order order) {
-
+    //отменить ордер т.е. удалить из открытых ордеров.
 }
 
 void finishOrder (Order order) {
-
+    //закрыть лимитный ордер
 }
 
 void finishOrder (Order order, long double price) {
-
+    //закрыть маркет-ордер по цене price
 }

@@ -7,14 +7,14 @@
 using namespace std;
 class User {
     private:
-    int ID;
-    unordered_map<string, long double> balance, freezed;
-    vector <Order> orderHistory;
-    vector <Order> openOrders;
+    int ID;//ID пользователя
+    unordered_map<string, long double> balance, freezed// Реальный баланс в валюте [val] и замороженный баланс в валюте [val]
+    vector <Order> orderHistory; //история ордеров
+    vector <Order> openOrders; //открытыя ордера
     public:
     User();
     
-    void userSetId (int newId);
+    void userSetId (int newId); 
 
     void processUserDeposit (int depositValue, string currency);
 
